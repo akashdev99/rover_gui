@@ -1,18 +1,22 @@
 from flask import Flask,render_template,Response
 import datetime
+import os
 from camera import Camera
+from importlib import import_module
+
+
+# import camera driver
+if os.environ.get('CAMERA'):
+    Camera = import_module('camera_' + os.environ['CAMERA']).Camera
+else:
+    from camera import Camera
+
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-   now = datetime.datetime.now()
-   timeString = now.strftime("%Y-%m-%d %H:%M")
-   templateData = {
-      'title' : 'HELLO!',
-      'time': timeString
-      }
-   return render_template('hello.html',**templateData)
+   return render_template('hello.html')
 
 def gen(camera):
     while True:
