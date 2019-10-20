@@ -13,10 +13,3 @@
 
 2)python run.py
 
-3)https://github.com/miguelgrinberg/flask-video-streaming
-
-4)https://blog.miguelgrinberg.com/post/video-streaming-with-flask
-
-5)https://www.instructables.com/id/Video-Streaming-Web-Server/
-
-6)https://stackoverflow.com/questions/49939859/flask-video-stream-using-opencv-images
